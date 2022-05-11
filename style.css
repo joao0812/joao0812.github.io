@@ -1,0 +1,649 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#2b1055, #70598b, #7597de);
+    min-height: 100vh;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Menu */
+header {
+    background-color: #8b34ee3a;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px 20px;
+    z-index: 1000;
+}
+
+header img {
+    position: sticky;
+    width: 50px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 60px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.ativo {
+    background-color: white;
+    color: #2b1055;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.links:active {
+    color: #80aaff;
+}
+
+
+/* Apresentação */
+
+section, footer {
+    background-image: url(../imagem/stars.png);
+    background-size: cover;
+}
+
+.apresentacao {
+    position: relative;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.colorRotate{
+    animation: colorRotate 6s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+    from {
+      color: #E54ED0;
+    }
+    10% {
+      color: #6524ac;
+    }
+    50% {
+      color: #9F45B0;
+    }
+    75% {
+      color: #ff3399;
+    }
+    100% {
+      color: #E54ED0;
+    }
+  }
+
+.containerApresentacaoImg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    width: 100%;
+    height: 55%;
+    align-items: center;
+}
+.perfil {
+    width: 700px;
+    height: 238px;
+    z-index: 2;
+    position: relative;
+
+}
+.text {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    width: 100%;
+    height: 120px;
+    text-align: center;
+}
+
+.text p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Apresentação HABILIDADES */
+
+
+.skillContainer{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    grid-template-columns: 33% 33% 33%;    
+}
+.skills{
+    width: 600px;
+    height: 100%;
+    background-color: #9e45b048;
+    border-radius: 10px;
+    border: 2px solid #acacac5b;
+    padding: 25px 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);    
+}
+.skills .skillBar{
+    margin: 20px 0px;
+    
+}
+.skills .skillBar:first-child{
+    margin-top: 0px;
+}
+.skills .skillBar .infoBar {
+    margin-bottom: 5px;
+}
+.skills h2{
+    opacity: 0;
+    animation: showtext 1s 1.5s linear forwards;
+}
+.skills .skillBar .infoBar span{
+    font-size: 17px;
+    font-weight: 600;
+    opacity: 0;
+    animation: showtext 1s 1.5s linear forwards;
+}
+
+.skills .skillBar .progressLine{
+    position: relative;
+    height: 13px;
+    width: 100%;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: #6c517271;
+    box-shadow: inset 0px 1px 1px rgba(0 , 0, 0, 0.4),
+                      0px 1px 1px rgba(255 , 255, 255, 0.4); 
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;  /* forwards ele faz a animação e fica */
+}
+
+.skills .skillBar .progressLine span{
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right, #2b1055, #7597de);
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;  /* forwards ele faz a animação e fica */
+}
+@keyframes animate {
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.progressLine.html span{
+    width: 100%;
+}
+.progressLine.css span{
+    width: 100%;
+}
+.progressLine.Fjs span{
+    width: 80%;
+}
+
+/*  ------------------------------------  */
+
+.progressLine.python span{
+    width: 80%;
+}
+.progressLine.Bjs span{
+    width: 60%;
+}
+.progressLine.c span {
+    width: 80%;
+}
+
+/*  ------------------------------------  */
+
+.progressLine.django span{
+    width: 20%;
+}
+.progressLine.jupyter span{
+    width: 60%;
+}
+.progressLine.react span{
+    width: 20%;
+}
+.skills .skillBar .progressLine span::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -10px;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showtext 1s 2s linear forwards;
+}
+.skills .skillBar .progressLine span::after{
+    position: absolute;
+    right: 0;
+    top: -28px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding:  3px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    animation: showtext 1s 2s linear forwards;
+}
+@keyframes showtext {
+    100%{
+        opacity: 1;
+    }
+}
+.progressLine.html span::after{
+    content: 'Avançado';
+}
+.progressLine.css span::after{
+    content: 'Avançado';
+}
+.progressLine.Fjs span::after{
+    content: 'Intermediário-Avançado';
+}
+
+/*  ------------------------------------  */
+
+.progressLine.python span::after{
+    content: 'Intermediário-Avançado';
+}
+.progressLine.Bjs span::after{
+    content: 'Intermediário';
+}
+.progressLine.c span::after{
+    content: 'Intermediário-Avançado';
+}
+
+/*  ------------------------------------  */
+
+.progressLine.django span::after{
+    content: 'Básico';
+}
+.progressLine.jupyter span::after{
+    content: 'Intermediário';
+}
+.progressLine.react span::after{
+    content: 'Básico';
+}
+
+
+
+.objetivos, .formacao, .certificado {
+    position: relative;
+    text-align: center;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.font2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+
+.container-objetivo, .container-formacao{
+    display: flex;
+    justify-content: center;
+}
+
+.text-objetivo, .text-formacao{
+    width: 360px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+
+.text-objetivo{
+    width: 700px;
+}
+.text-formacao{
+    width: 850px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Apresentação PROJETOS */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .containerProjects{
+    position: relative;
+    width: 1595px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .containerProjects .card{
+    position: relative;
+    max-width: 410px;
+    height: 280px;
+    background-color: #d653e75d;
+    border-radius: 18px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+.container .containerProjects .card:hover{
+    height: 450px;
+}
+.container .containerProjects .card .imgProjects{
+    position: relative;
+    width: 360px;
+    height: 280px;
+    top: -80px;
+    left: 12px;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 1);
+    border-radius: 25px;
+}
+.container .containerProjects .card .imgProjects2{
+    height: 229px;
+}
+.container .containerProjects .card img{
+    width: 100%;
+    border-radius: 12px;
+}
+
+.container .containerProjects .card .contentProjects{
+    position: relative;
+    margin-top: -140px;
+    padding: 0px 15px;
+    visibility: hidden;
+    text-align: center;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container .containerProjects .card .contentProjects h2{
+    margin-bottom: 5px;
+}
+.container .containerProjects .card .contentProjects p{
+    margin-bottom: 10px;
+}
+.container .containerProjects .card:hover .contentProjects{
+    margin-top: -30px;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+
+/*section .imagem-projeto img {
+    width: 100%;
+    transform: translateY(0px);
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}*/
+
+
+/* CERTIFICADOS */
+
+.container-certificado {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.text-certificado{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.text-certificado img{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quadro{
+    width: 305px;
+    height: 305px;
+    overflow: hidden;
+    display: inline-block;
+}
+.quadro:hover{
+    animation: scale 1s ease-in;
+}
+@keyframes scale{
+    100%{
+        transform: scale(1.3);
+    }
+    0%{
+        transform: scale(1.3);
+    }
+}
+/* FORMAÇÃO */
+
+.titulo{
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    padding-top: 20px;
+    margin-bottom: 60px;
+}
+.formacao{
+    padding-bottom: 110px;
+}
+.container-borda{
+    width: 60%;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 45px;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* FOOTER */
+
+footer{
+    background: linear-gradient(#7597de, #70598b, #2b1055);
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+footer ul li{
+    margin: 10px;
+    border-radius: 18px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid black;
+    font-style: none;
+}
+footer ul li:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+    animation: jump 0.5s ease-in-out;
+    
+}
+@keyframes jump {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-30%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+footer ul li a{
+    padding: 9px;
+    display: flex;
+    justify-content: center;
+}
+footer img{
+    width: 30px;
+}
+
+
+
+/* AJUSTE PARA CELULAR @media */
+@media screen and (max-width: 1840px){
+    .skillContainer{
+        grid-template-columns: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .skills:first-child{
+        margin-top: 0;
+    }
+    .skills{
+        width: 95%;
+        margin-top: 10px;
+    }
+    .skills .skillBar .progressLine span::before{
+        right: 0px;
+    }
+    .skills .skillBar .progressLine span::after{
+        right: -48px;
+    }
+}
+@media screen and (max-width: 1075px){
+    .container .containerProjects{
+        flex-direction: column;
+        width: 95%;
+    }
+}
+@media screen and (max-width: 600px){
+    header {
+        text-align: center;
+        overflow-x: scroll; 
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+    header img{
+        float: left;
+        top: 10px;
+        left: 200px;
+    }
+    header ul{
+        width: 800px;
+        height: 60px;
+        margin: 0;
+        justify-content: space-around;
+    }
+    header ul li{
+        display: inline-block;
+        padding: 10px;
+    }
+    header ul li a{
+        margin-left: 0;
+        padding: 5px;
+    }
+    .perfil{
+        height: 140px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .apresentacao{
+        height: 480px;
+    }
+    .containerApresentacaoImg{
+        margin-bottom: 35px;
+        height: 160px;
+    }
+    .text{
+        padding: 0 5px;
+        height: 200px;
+        align-items: center;
+    }
+    .titulo{
+        text-align: center;
+        margin-bottom: 20px;
+        padding-top: 50px;
+    }
+    .objetivos{
+        width: 100%;
+    }
+    .text-objetivo{
+        width: 90%;
+    }
+    .container .containerProjects{
+        flex-direction: column;
+        width: 95%;
+    }
+    .container .containerProjects .card{
+        transition: 0.3s ease;
+    }
+    .container .containerProjects .card:hover{
+        animation: none;
+    }
+    .container .containerProjects .card:active{
+        height: 430px;
+    }
+    .container .containerProjects .card .imgProjects{
+        top: -60px;
+        left: 0;
+    }
+    
+    .text-certificado{
+        text-align: center;
+        display: inline-block;
+    }
+    .quadro:hover{
+        animation: none;
+    }
+    .formacao{
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    .container-borda{
+        width: 80%;
+    }
+    footer{
+        width: 100%;
+    }
+    .footerLink:active{
+        color: #70598b;
+    }
+}
